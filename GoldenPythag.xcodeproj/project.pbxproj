@@ -1,0 +1,479 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A6E967061AA44D3300C2F7BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E967051AA44D3300C2F7BE /* AppDelegate.swift */; };
+		A6E967091AA44D3300C2F7BE /* GoldenPythag.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A6E967071AA44D3300C2F7BE /* GoldenPythag.xcdatamodeld */; };
+		A6E9670E1AA44D3300C2F7BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6E9670C1AA44D3300C2F7BE /* Main.storyboard */; };
+		A6E967101AA44D3300C2F7BE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6E9670F1AA44D3300C2F7BE /* Images.xcassets */; };
+		A6E967131AA44D3300C2F7BE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6E967111AA44D3300C2F7BE /* LaunchScreen.xib */; };
+		A6E9671F1AA44D3300C2F7BE /* GoldenPythagTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E9671E1AA44D3300C2F7BE /* GoldenPythagTests.swift */; };
+		A6E9672B1AA44FBB00C2F7BE /* SelectMarketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E9672A1AA44FBB00C2F7BE /* SelectMarketViewController.swift */; };
+		A6E9672D1AA4589200C2F7BE /* Market.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E9672C1AA4589200C2F7BE /* Market.swift */; };
+		A6E967301AA46AA400C2F7BE /* PricePivot.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E9672F1AA46AA400C2F7BE /* PricePivot.swift */; };
+		A6E967321AA598E900C2F7BE /* Basics.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E967311AA598E900C2F7BE /* Basics.swift */; };
+		A6E967341AA59B0400C2F7BE /* Prediction.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E967331AA59B0400C2F7BE /* Prediction.swift */; };
+		A6E967361AA5C2D600C2F7BE /* GoldenPythagTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E967351AA5C2D600C2F7BE /* GoldenPythagTabBarController.swift */; };
+		A6E967381AA5C35200C2F7BE /* GoldenPythagNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E967371AA5C35200C2F7BE /* GoldenPythagNavigationController.swift */; };
+		A6E9673A1AA5C47D00C2F7BE /* PredictionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E967391AA5C47D00C2F7BE /* PredictionViewController.swift */; };
+		A6E9673C1AA5C50F00C2F7BE /* SelectPivotListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E9673B1AA5C50F00C2F7BE /* SelectPivotListViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A6E967191AA44D3300C2F7BE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A6E966F81AA44D3300C2F7BE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A6E966FF1AA44D3300C2F7BE;
+			remoteInfo = GoldenPythag;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A6E967001AA44D3300C2F7BE /* GoldenPythag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoldenPythag.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A6E967041AA44D3300C2F7BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A6E967051AA44D3300C2F7BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A6E967081AA44D3300C2F7BE /* GoldenPythag.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GoldenPythag.xcdatamodel; sourceTree = "<group>"; };
+		A6E9670D1AA44D3300C2F7BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A6E9670F1AA44D3300C2F7BE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		A6E967121AA44D3300C2F7BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		A6E967181AA44D3300C2F7BE /* GoldenPythagTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoldenPythagTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A6E9671D1AA44D3300C2F7BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A6E9671E1AA44D3300C2F7BE /* GoldenPythagTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoldenPythagTests.swift; sourceTree = "<group>"; };
+		A6E9672A1AA44FBB00C2F7BE /* SelectMarketViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectMarketViewController.swift; sourceTree = "<group>"; };
+		A6E9672C1AA4589200C2F7BE /* Market.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Market.swift; sourceTree = "<group>"; };
+		A6E9672F1AA46AA400C2F7BE /* PricePivot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PricePivot.swift; sourceTree = "<group>"; };
+		A6E967311AA598E900C2F7BE /* Basics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Basics.swift; sourceTree = "<group>"; };
+		A6E967331AA59B0400C2F7BE /* Prediction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Prediction.swift; sourceTree = "<group>"; };
+		A6E967351AA5C2D600C2F7BE /* GoldenPythagTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoldenPythagTabBarController.swift; sourceTree = "<group>"; };
+		A6E967371AA5C35200C2F7BE /* GoldenPythagNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoldenPythagNavigationController.swift; sourceTree = "<group>"; };
+		A6E967391AA5C47D00C2F7BE /* PredictionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PredictionViewController.swift; sourceTree = "<group>"; };
+		A6E9673B1AA5C50F00C2F7BE /* SelectPivotListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectPivotListViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A6E966FD1AA44D3300C2F7BE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A6E967151AA44D3300C2F7BE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A6E966F71AA44D3300C2F7BE = {
+			isa = PBXGroup;
+			children = (
+				A6E967021AA44D3300C2F7BE /* GoldenPythag */,
+				A6E9671B1AA44D3300C2F7BE /* GoldenPythagTests */,
+				A6E967011AA44D3300C2F7BE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A6E967011AA44D3300C2F7BE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A6E967001AA44D3300C2F7BE /* GoldenPythag.app */,
+				A6E967181AA44D3300C2F7BE /* GoldenPythagTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A6E967021AA44D3300C2F7BE /* GoldenPythag */ = {
+			isa = PBXGroup;
+			children = (
+				A6E9670C1AA44D3300C2F7BE /* Main.storyboard */,
+				A6E9673B1AA5C50F00C2F7BE /* SelectPivotListViewController.swift */,
+				A6E967391AA5C47D00C2F7BE /* PredictionViewController.swift */,
+				A6E967371AA5C35200C2F7BE /* GoldenPythagNavigationController.swift */,
+				A6E967351AA5C2D600C2F7BE /* GoldenPythagTabBarController.swift */,
+				A6E9672A1AA44FBB00C2F7BE /* SelectMarketViewController.swift */,
+				A6E967071AA44D3300C2F7BE /* GoldenPythag.xcdatamodeld */,
+				A6E9672E1AA469BA00C2F7BE /* Model */,
+				A6E967031AA44D3300C2F7BE /* Supporting Files */,
+			);
+			path = GoldenPythag;
+			sourceTree = "<group>";
+		};
+		A6E967031AA44D3300C2F7BE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A6E967051AA44D3300C2F7BE /* AppDelegate.swift */,
+				A6E9670F1AA44D3300C2F7BE /* Images.xcassets */,
+				A6E967111AA44D3300C2F7BE /* LaunchScreen.xib */,
+				A6E967041AA44D3300C2F7BE /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A6E9671B1AA44D3300C2F7BE /* GoldenPythagTests */ = {
+			isa = PBXGroup;
+			children = (
+				A6E9671E1AA44D3300C2F7BE /* GoldenPythagTests.swift */,
+				A6E9671C1AA44D3300C2F7BE /* Supporting Files */,
+			);
+			path = GoldenPythagTests;
+			sourceTree = "<group>";
+		};
+		A6E9671C1AA44D3300C2F7BE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A6E9671D1AA44D3300C2F7BE /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A6E9672E1AA469BA00C2F7BE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A6E9672C1AA4589200C2F7BE /* Market.swift */,
+				A6E9672F1AA46AA400C2F7BE /* PricePivot.swift */,
+				A6E967311AA598E900C2F7BE /* Basics.swift */,
+				A6E967331AA59B0400C2F7BE /* Prediction.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A6E966FF1AA44D3300C2F7BE /* GoldenPythag */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A6E967221AA44D3300C2F7BE /* Build configuration list for PBXNativeTarget "GoldenPythag" */;
+			buildPhases = (
+				A6E966FC1AA44D3300C2F7BE /* Sources */,
+				A6E966FD1AA44D3300C2F7BE /* Frameworks */,
+				A6E966FE1AA44D3300C2F7BE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GoldenPythag;
+			productName = GoldenPythag;
+			productReference = A6E967001AA44D3300C2F7BE /* GoldenPythag.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A6E967171AA44D3300C2F7BE /* GoldenPythagTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A6E967251AA44D3300C2F7BE /* Build configuration list for PBXNativeTarget "GoldenPythagTests" */;
+			buildPhases = (
+				A6E967141AA44D3300C2F7BE /* Sources */,
+				A6E967151AA44D3300C2F7BE /* Frameworks */,
+				A6E967161AA44D3300C2F7BE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A6E9671A1AA44D3300C2F7BE /* PBXTargetDependency */,
+			);
+			name = GoldenPythagTests;
+			productName = GoldenPythagTests;
+			productReference = A6E967181AA44D3300C2F7BE /* GoldenPythagTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A6E966F81AA44D3300C2F7BE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Michael L. Mehr";
+				TargetAttributes = {
+					A6E966FF1AA44D3300C2F7BE = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					A6E967171AA44D3300C2F7BE = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = A6E966FF1AA44D3300C2F7BE;
+					};
+				};
+			};
+			buildConfigurationList = A6E966FB1AA44D3300C2F7BE /* Build configuration list for PBXProject "GoldenPythag" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A6E966F71AA44D3300C2F7BE;
+			productRefGroup = A6E967011AA44D3300C2F7BE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A6E966FF1AA44D3300C2F7BE /* GoldenPythag */,
+				A6E967171AA44D3300C2F7BE /* GoldenPythagTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A6E966FE1AA44D3300C2F7BE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A6E9670E1AA44D3300C2F7BE /* Main.storyboard in Resources */,
+				A6E967131AA44D3300C2F7BE /* LaunchScreen.xib in Resources */,
+				A6E967101AA44D3300C2F7BE /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A6E967161AA44D3300C2F7BE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A6E966FC1AA44D3300C2F7BE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A6E967321AA598E900C2F7BE /* Basics.swift in Sources */,
+				A6E9673A1AA5C47D00C2F7BE /* PredictionViewController.swift in Sources */,
+				A6E9673C1AA5C50F00C2F7BE /* SelectPivotListViewController.swift in Sources */,
+				A6E967381AA5C35200C2F7BE /* GoldenPythagNavigationController.swift in Sources */,
+				A6E967061AA44D3300C2F7BE /* AppDelegate.swift in Sources */,
+				A6E967301AA46AA400C2F7BE /* PricePivot.swift in Sources */,
+				A6E967091AA44D3300C2F7BE /* GoldenPythag.xcdatamodeld in Sources */,
+				A6E967341AA59B0400C2F7BE /* Prediction.swift in Sources */,
+				A6E9672B1AA44FBB00C2F7BE /* SelectMarketViewController.swift in Sources */,
+				A6E9672D1AA4589200C2F7BE /* Market.swift in Sources */,
+				A6E967361AA5C2D600C2F7BE /* GoldenPythagTabBarController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A6E967141AA44D3300C2F7BE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A6E9671F1AA44D3300C2F7BE /* GoldenPythagTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A6E9671A1AA44D3300C2F7BE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A6E966FF1AA44D3300C2F7BE /* GoldenPythag */;
+			targetProxy = A6E967191AA44D3300C2F7BE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A6E9670C1AA44D3300C2F7BE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A6E9670D1AA44D3300C2F7BE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A6E967111AA44D3300C2F7BE /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A6E967121AA44D3300C2F7BE /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A6E967201AA44D3300C2F7BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A6E967211AA44D3300C2F7BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A6E967231AA44D3300C2F7BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = GoldenPythag/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A6E967241AA44D3300C2F7BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = GoldenPythag/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		A6E967261AA44D3300C2F7BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = GoldenPythagTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GoldenPythag.app/GoldenPythag";
+			};
+			name = Debug;
+		};
+		A6E967271AA44D3300C2F7BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = GoldenPythagTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GoldenPythag.app/GoldenPythag";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A6E966FB1AA44D3300C2F7BE /* Build configuration list for PBXProject "GoldenPythag" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A6E967201AA44D3300C2F7BE /* Debug */,
+				A6E967211AA44D3300C2F7BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A6E967221AA44D3300C2F7BE /* Build configuration list for PBXNativeTarget "GoldenPythag" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A6E967231AA44D3300C2F7BE /* Debug */,
+				A6E967241AA44D3300C2F7BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		A6E967251AA44D3300C2F7BE /* Build configuration list for PBXNativeTarget "GoldenPythagTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A6E967261AA44D3300C2F7BE /* Debug */,
+				A6E967271AA44D3300C2F7BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		A6E967071AA44D3300C2F7BE /* GoldenPythag.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A6E967081AA44D3300C2F7BE /* GoldenPythag.xcdatamodel */,
+			);
+			currentVersion = A6E967081AA44D3300C2F7BE /* GoldenPythag.xcdatamodel */;
+			path = GoldenPythag.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = A6E966F81AA44D3300C2F7BE /* Project object */;
+}
