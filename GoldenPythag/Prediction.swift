@@ -18,6 +18,14 @@ enum PredictionType : Printable  {
         case NatalCheck: return "NC"
         }
     }
+    static func GetRandomItem() -> PredictionType {
+        switch arc4random_uniform(3) {
+        case 0: return .A
+        case 1: return .B
+        case 2: return .AB
+        default: return .NatalCheck // should never happen as long as 3 is passed
+        }
+    }
 }
 
 enum PredictionState : Printable  {
@@ -32,7 +40,7 @@ enum PredictionState : Printable  {
     }
 }
 
-class Prediction {
+class Prediction : Printable {
     // basic data encapsulates the parameters of a prediction request
     var startDate : NSDate = NSDate()
     var lengthInDays : Int = 1
@@ -56,5 +64,39 @@ class Prediction {
         lengthInDays = length
         marketId = pivotListInput.marketId! // must be associated by the time this is called
         pivotData = pivotListInput.pivotList
+    }
+    
+    func setRandomResults( rundate : NSDate ) {
+        runDate = rundate
+        let fail = getRandomFrom(0, to: 6) == 0 // chance of failure is 1 in X=to
+        if (fail) {
+            state = .Failed
+            message = "Simulated failure result."
+            resultList = []
+        } else {
+            state = .Completed
+            message = "Simulated successful result."
+            for _ in 0..<lengthInDays {
+                resultList.append(getRandomFrom(0, to: 1000))
+            }
+        }
+    }
+    
+    var description : String {
+        let market = Market.GetDefaultName(marketId)!
+        return "Type \(type) run of \(market) market for \(lengthInDays) days from \(startDate) (\(state) with \(pivotData.count) prices and \(resultList.count) results)"
+    }
+    
+    class func GetDefaults() -> [Prediction] {
+        // create and return an array of random data to play with
+        var pdata = [Prediction]()
+        let loops = getRandomFrom(4, to: 8)
+        for _ in 0..<loops {
+            let length = getRandomFrom(5, to: 30)
+            let object = Prediction(typeInput: .GetRandomItem(), onDate: getRandomDate(), forDays: length, withPrices: PricePivotList.GetRandomItem())
+            object.setRandomResults(getRandomDate())
+            pdata.append(object)
+        }
+        return pdata
     }
 }

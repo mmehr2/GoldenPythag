@@ -1,52 +1,59 @@
 //
-//  PredictionViewController.swift
+//  SelectMarketLocationViewController.swift
 //  GoldenPythag
 //
-//  Created by Michael L Mehr on 3/3/15.
+//  Created by Michael L Mehr on 3/5/15.
 //  Copyright (c) 2015 Michael L. Mehr. All rights reserved.
 //
 
 import UIKit
 
-class PredictionViewController: GoldenPythagTableViewController {
+class SelectMarketLocationViewController: GoldenPythagTableViewController {
 
-    let predictions = GoldenPythag.modelData.predictions
+    let marketLocations = GoldenPythag.modelData.marketLocations
+    let numDefaultMarketLocations = MarketLocation.GetDefaults().count
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
+        // Uncomment the following line to preserve selection between presentations
+        // self.clearsSelectionOnViewWillAppear = false
+
+        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
-    
+
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // Return the number of sections.
-        return 1
+        return 2
     }
-
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // Return the number of rows in the section.
-        return section == 0 ? predictions.count : 0
+        return section == 0 ? numDefaultMarketLocations : (marketLocations.count - numDefaultMarketLocations)
     }
-
+    
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Prediction Cell", forIndexPath: indexPath) as UITableViewCell
-
+        let cell = tableView.dequeueReusableCellWithIdentifier("Default Market Location Cell", forIndexPath: indexPath) as UITableViewCell
+        
         // Configure the cell...
-        cell.textLabel?.text = predictions[indexPath.row].description
-
+        cell.textLabel?.text = marketLocations[indexPath.row].name
+        
         return cell
     }
     
-
-    /*
+    
+    
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         // Return NO if you do not want the specified item to be editable.
-        return true
+        // section 1 (#0) is for default markets, non-editable
+        // section 2 (#1) is for user's own custom markets
+        return indexPath.section == 0 ? false : true
     }
-    */
 
     /*
     // Override to support editing the table view.
@@ -75,22 +82,14 @@ class PredictionViewController: GoldenPythagTableViewController {
     }
     */
 
-    
+    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using [segue destinationViewController].
-        if segue.identifier == "Show Prediction Segue" {
-            if let dvc = segue.destinationViewController as? DisplayPredictionViewController {
-                if let cell = sender as? UITableViewCell {
-                    let indexPath = tableView.indexPathForCell(cell)!
-                    // Pass the selected object to the new view controller.
-                    dvc.prediction = predictions[indexPath.row]
-                }
-            }
-        }
+        // Pass the selected object to the new view controller.
     }
-    
+    */
 
 }

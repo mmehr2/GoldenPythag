@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A6A9A5BE1AA86F1900E4B084 /* MarketLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A9A5BD1AA86F1900E4B084 /* MarketLocation.swift */; };
+		A6A9A5C01AA9AF3B00E4B084 /* ResultListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A9A5BF1AA9AF3B00E4B084 /* ResultListViewController.swift */; };
 		A6E967061AA44D3300C2F7BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E967051AA44D3300C2F7BE /* AppDelegate.swift */; };
 		A6E967091AA44D3300C2F7BE /* GoldenPythag.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A6E967071AA44D3300C2F7BE /* GoldenPythag.xcdatamodeld */; };
 		A6E9670E1AA44D3300C2F7BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6E9670C1AA44D3300C2F7BE /* Main.storyboard */; };
@@ -18,10 +20,14 @@
 		A6E967301AA46AA400C2F7BE /* PricePivot.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E9672F1AA46AA400C2F7BE /* PricePivot.swift */; };
 		A6E967321AA598E900C2F7BE /* Basics.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E967311AA598E900C2F7BE /* Basics.swift */; };
 		A6E967341AA59B0400C2F7BE /* Prediction.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E967331AA59B0400C2F7BE /* Prediction.swift */; };
-		A6E967361AA5C2D600C2F7BE /* GoldenPythagTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E967351AA5C2D600C2F7BE /* GoldenPythagTabBarController.swift */; };
-		A6E967381AA5C35200C2F7BE /* GoldenPythagNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E967371AA5C35200C2F7BE /* GoldenPythagNavigationController.swift */; };
 		A6E9673A1AA5C47D00C2F7BE /* PredictionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E967391AA5C47D00C2F7BE /* PredictionViewController.swift */; };
 		A6E9673C1AA5C50F00C2F7BE /* SelectPivotListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E9673B1AA5C50F00C2F7BE /* SelectPivotListViewController.swift */; };
+		A6E9673E1AA6613600C2F7BE /* GoldenPythagTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E9673D1AA6613600C2F7BE /* GoldenPythagTableViewController.swift */; };
+		A6E967401AA687AB00C2F7BE /* GoldenPythagData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E9673F1AA687AB00C2F7BE /* GoldenPythagData.swift */; };
+		A6E967441AA850E900C2F7BE /* DisplayPredictionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E967431AA850E900C2F7BE /* DisplayPredictionViewController.swift */; };
+		A6E967461AA8516000C2F7BE /* RequestPredictionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E967451AA8516000C2F7BE /* RequestPredictionViewController.swift */; };
+		A6E967481AA851C000C2F7BE /* SelectPivotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E967471AA851C000C2F7BE /* SelectPivotViewController.swift */; };
+		A6E9674A1AA8522D00C2F7BE /* SelectMarketLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E967491AA8522D00C2F7BE /* SelectMarketLocationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A6A9A5BD1AA86F1900E4B084 /* MarketLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarketLocation.swift; sourceTree = "<group>"; };
+		A6A9A5BF1AA9AF3B00E4B084 /* ResultListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultListViewController.swift; sourceTree = "<group>"; };
 		A6E967001AA44D3300C2F7BE /* GoldenPythag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoldenPythag.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6E967041AA44D3300C2F7BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A6E967051AA44D3300C2F7BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -50,10 +58,14 @@
 		A6E9672F1AA46AA400C2F7BE /* PricePivot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PricePivot.swift; sourceTree = "<group>"; };
 		A6E967311AA598E900C2F7BE /* Basics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Basics.swift; sourceTree = "<group>"; };
 		A6E967331AA59B0400C2F7BE /* Prediction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Prediction.swift; sourceTree = "<group>"; };
-		A6E967351AA5C2D600C2F7BE /* GoldenPythagTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoldenPythagTabBarController.swift; sourceTree = "<group>"; };
-		A6E967371AA5C35200C2F7BE /* GoldenPythagNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoldenPythagNavigationController.swift; sourceTree = "<group>"; };
 		A6E967391AA5C47D00C2F7BE /* PredictionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PredictionViewController.swift; sourceTree = "<group>"; };
 		A6E9673B1AA5C50F00C2F7BE /* SelectPivotListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectPivotListViewController.swift; sourceTree = "<group>"; };
+		A6E9673D1AA6613600C2F7BE /* GoldenPythagTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoldenPythagTableViewController.swift; sourceTree = "<group>"; };
+		A6E9673F1AA687AB00C2F7BE /* GoldenPythagData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoldenPythagData.swift; sourceTree = "<group>"; };
+		A6E967431AA850E900C2F7BE /* DisplayPredictionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayPredictionViewController.swift; sourceTree = "<group>"; };
+		A6E967451AA8516000C2F7BE /* RequestPredictionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestPredictionViewController.swift; sourceTree = "<group>"; };
+		A6E967471AA851C000C2F7BE /* SelectPivotViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectPivotViewController.swift; sourceTree = "<group>"; };
+		A6E967491AA8522D00C2F7BE /* SelectMarketLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectMarketLocationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,11 +108,16 @@
 			isa = PBXGroup;
 			children = (
 				A6E9670C1AA44D3300C2F7BE /* Main.storyboard */,
-				A6E9673B1AA5C50F00C2F7BE /* SelectPivotListViewController.swift */,
+				A6E967051AA44D3300C2F7BE /* AppDelegate.swift */,
+				A6E9673D1AA6613600C2F7BE /* GoldenPythagTableViewController.swift */,
 				A6E967391AA5C47D00C2F7BE /* PredictionViewController.swift */,
-				A6E967371AA5C35200C2F7BE /* GoldenPythagNavigationController.swift */,
-				A6E967351AA5C2D600C2F7BE /* GoldenPythagTabBarController.swift */,
+				A6E967431AA850E900C2F7BE /* DisplayPredictionViewController.swift */,
+				A6E967451AA8516000C2F7BE /* RequestPredictionViewController.swift */,
+				A6E9673B1AA5C50F00C2F7BE /* SelectPivotListViewController.swift */,
+				A6E967471AA851C000C2F7BE /* SelectPivotViewController.swift */,
 				A6E9672A1AA44FBB00C2F7BE /* SelectMarketViewController.swift */,
+				A6E967491AA8522D00C2F7BE /* SelectMarketLocationViewController.swift */,
+				A6A9A5BF1AA9AF3B00E4B084 /* ResultListViewController.swift */,
 				A6E967071AA44D3300C2F7BE /* GoldenPythag.xcdatamodeld */,
 				A6E9672E1AA469BA00C2F7BE /* Model */,
 				A6E967031AA44D3300C2F7BE /* Supporting Files */,
@@ -111,7 +128,6 @@
 		A6E967031AA44D3300C2F7BE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				A6E967051AA44D3300C2F7BE /* AppDelegate.swift */,
 				A6E9670F1AA44D3300C2F7BE /* Images.xcassets */,
 				A6E967111AA44D3300C2F7BE /* LaunchScreen.xib */,
 				A6E967041AA44D3300C2F7BE /* Info.plist */,
@@ -139,7 +155,9 @@
 		A6E9672E1AA469BA00C2F7BE /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A6E9673F1AA687AB00C2F7BE /* GoldenPythagData.swift */,
 				A6E9672C1AA4589200C2F7BE /* Market.swift */,
+				A6A9A5BD1AA86F1900E4B084 /* MarketLocation.swift */,
 				A6E9672F1AA46AA400C2F7BE /* PricePivot.swift */,
 				A6E967311AA598E900C2F7BE /* Basics.swift */,
 				A6E967331AA59B0400C2F7BE /* Prediction.swift */,
@@ -248,16 +266,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				A6E967321AA598E900C2F7BE /* Basics.swift in Sources */,
+				A6E967481AA851C000C2F7BE /* SelectPivotViewController.swift in Sources */,
+				A6E9673E1AA6613600C2F7BE /* GoldenPythagTableViewController.swift in Sources */,
 				A6E9673A1AA5C47D00C2F7BE /* PredictionViewController.swift in Sources */,
+				A6E9674A1AA8522D00C2F7BE /* SelectMarketLocationViewController.swift in Sources */,
 				A6E9673C1AA5C50F00C2F7BE /* SelectPivotListViewController.swift in Sources */,
-				A6E967381AA5C35200C2F7BE /* GoldenPythagNavigationController.swift in Sources */,
 				A6E967061AA44D3300C2F7BE /* AppDelegate.swift in Sources */,
 				A6E967301AA46AA400C2F7BE /* PricePivot.swift in Sources */,
+				A6E967441AA850E900C2F7BE /* DisplayPredictionViewController.swift in Sources */,
 				A6E967091AA44D3300C2F7BE /* GoldenPythag.xcdatamodeld in Sources */,
 				A6E967341AA59B0400C2F7BE /* Prediction.swift in Sources */,
 				A6E9672B1AA44FBB00C2F7BE /* SelectMarketViewController.swift in Sources */,
+				A6A9A5C01AA9AF3B00E4B084 /* ResultListViewController.swift in Sources */,
+				A6A9A5BE1AA86F1900E4B084 /* MarketLocation.swift in Sources */,
 				A6E9672D1AA4589200C2F7BE /* Market.swift in Sources */,
-				A6E967361AA5C2D600C2F7BE /* GoldenPythagTabBarController.swift in Sources */,
+				A6E967461AA8516000C2F7BE /* RequestPredictionViewController.swift in Sources */,
+				A6E967401AA687AB00C2F7BE /* GoldenPythagData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -451,6 +475,7 @@
 				A6E967241AA44D3300C2F7BE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A6E967251AA44D3300C2F7BE /* Build configuration list for PBXNativeTarget "GoldenPythagTests" */ = {
 			isa = XCConfigurationList;
@@ -459,6 +484,7 @@
 				A6E967271AA44D3300C2F7BE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

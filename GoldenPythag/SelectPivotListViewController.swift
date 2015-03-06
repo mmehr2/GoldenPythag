@@ -8,43 +8,39 @@
 
 import UIKit
 
-class SelectPivotListViewController: UITableViewController {
+class SelectPivotListViewController: GoldenPythagTableViewController {
+    
+    let pivotLists = GoldenPythag.modelData.pivotLists
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        // need to set the title
-        navigationItem.title = "Price Lists"
     }
 
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 0
+        return section == 0 ? pivotLists.count : 0
     }
 
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("Pivot List Cell", forIndexPath: indexPath) as UITableViewCell
 
         // Configure the cell...
+        let pl = pivotLists[indexPath.row]
+        let market = GoldenPythag.modelData.getMarketWithID(pl.marketId!)!
+        cell.textLabel?.text = pl.name ?? ""
+        cell.detailTextLabel?.text = "\(market.name): \(pl.description)"
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
@@ -81,14 +77,22 @@ class SelectPivotListViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "Show Pivot List Segue" {
+            if let dvc = segue.destinationViewController as? SelectPivotViewController {
+                if let cell = sender as? UITableViewCell {
+                    let indexPath = tableView.indexPathForCell(cell)!
+                    // Pass the selected object to the new view controller.
+                    dvc.pivotList = pivotLists[indexPath.row]
+                }
+            }
+        }
     }
-    */
+    
 
 }

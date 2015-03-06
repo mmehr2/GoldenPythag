@@ -1,14 +1,14 @@
 //
-//  GoldenPythagTabBarController.swift
+//  RequestPredictionViewController.swift
 //  GoldenPythag
 //
-//  Created by Michael L Mehr on 3/3/15.
+//  Created by Michael L Mehr on 3/5/15.
 //  Copyright (c) 2015 Michael L. Mehr. All rights reserved.
 //
 
 import UIKit
 
-class GoldenPythagTabBarController: UITabBarController {
+class RequestPredictionViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

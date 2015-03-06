@@ -8,22 +8,15 @@
 
 import UIKit
 
-class SelectMarketViewController: UITableViewController {
+class SelectMarketViewController: GoldenPythagTableViewController {
 
-    let markets = Market.GetDefaultMarkets()
+    let markets = GoldenPythag.modelData.markets
+    let numDefaultMarkets = Market.GetDefaults().count
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        // need to set the title
-        navigationItem.title = "Markets"
     }
-
+    
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -33,7 +26,7 @@ class SelectMarketViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // Return the number of rows in the section.
-        return section == 0 ? markets.count : 0
+        return section == 0 ? numDefaultMarkets : (markets.count - numDefaultMarkets)
     }
 
     
