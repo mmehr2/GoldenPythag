@@ -93,7 +93,10 @@ class ChangeMarketViewController: UIViewController, UITextFieldDelegate {
     // validation tests:
     // 1. must have nonblank name field
     private var validatedName : Bool {
-        return nameTextField.text != ""
+        guard let nameField = nameTextField.text else {
+            return false
+        }
+        return nameField != ""
     }
     // 2. no future dates for origin
     private var validatedDate : Bool {
@@ -118,9 +121,9 @@ class ChangeMarketViewController: UIViewController, UITextFieldDelegate {
     }
     
     func updateModel() {
-        if validatedName && market.name != nameTextField.text {
+        if validatedName && market.name != nameTextField.text! {
             // copy current UI settings into object
-            market.name = nameTextField.text
+            market.name = nameTextField.text!
         }
         if validatedDate && market.origin != originDatePicker.date {
             // copy current UI settings into object
@@ -157,7 +160,7 @@ class ChangeMarketViewController: UIViewController, UITextFieldDelegate {
     }
 
     // this method allows keyboard removal by touching any background in the view
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         view.endEditing(true)
         setEditing(false, animated: true)
         super.touchesBegan(touches, withEvent: event)

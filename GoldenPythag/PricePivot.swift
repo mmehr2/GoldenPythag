@@ -32,7 +32,7 @@ The GetDefaults() static/class functions are designed to create random test data
 typealias Price = NSNumber
 
 // pivot struct pairs a price with a date, also indicating top or bottom price inflection
-struct PricePivot : Printable {
+struct PricePivot : CustomStringConvertible {
     var date : NSDate
     var price : Price
     var top : Bool
@@ -91,7 +91,7 @@ struct PricePivot : Printable {
 
 // MARK: list class entity
 // identified list of pivots associated with a particular market
-class PricePivotList : Printable {
+class PricePivotList : CustomStringConvertible {
     let id : Int
     var marketId : Int
     var name : String? { didSet { notification.broadcast() } }
@@ -134,7 +134,7 @@ class PricePivotList : Printable {
     // description is pivot count with optional date range
     func minMaxDate() -> (NSDate, NSDate)? {
         if pivotList.count == 0 { return nil }
-        let pls = pivotList.sorted({ $0.date < $1.date })
+        let pls = pivotList.sort({ $0.date < $1.date })
         return (pls.first!.date, pls.last!.date)
     }
     var description : String {
@@ -153,7 +153,7 @@ class PricePivotList : Printable {
     // MARK: simulated data generation
     class func GetRandomItem() -> PricePivotList {
         // create and return an unnamed array of random data to play with
-        var pdata = PricePivotList(ID: assignID(), market: Market.GetRandomItem())
+        let pdata = PricePivotList(ID: assignID(), market: Market.GetRandomItem())
         pdata.pivotList = PricePivot.GetDefaults()
         return pdata
     }

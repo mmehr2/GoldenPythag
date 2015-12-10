@@ -101,7 +101,7 @@ class ChangePivotListInfoViewController: GoldenPythagTableViewController, UIText
     }
     
     // this method allows keyboard removal by touching any background in the view
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         view.endEditing(true)
         setEditing(false, animated: true)
         super.touchesBegan(touches, withEvent: event)

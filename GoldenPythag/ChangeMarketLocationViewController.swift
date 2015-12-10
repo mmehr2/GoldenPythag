@@ -139,7 +139,10 @@ class ChangeMarketLocationViewController: GoldenPythagTableViewController, UITex
     // MARK: validation tests
     // 1. must have nonblank name field
     private var validatedName : Bool {
-        return nameTextField.text != ""
+        guard let nameField = nameTextField.text else {
+            return false
+        }
+        return nameField != ""
     }
     // overall test to activate the Save button
     private var validatedUI : Bool {
@@ -147,9 +150,9 @@ class ChangeMarketLocationViewController: GoldenPythagTableViewController, UITex
     }
     
     private func updateModel() {
-        if validatedName && marketLocation.name != nameTextField.text {
+        if validatedName && marketLocation.name != nameTextField.text! {
             // copy current UI settings into object
-            marketLocation.name = nameTextField.text
+            marketLocation.name = nameTextField.text!
         }
         marketLocation.longitude = longitude
         marketLocation.latitude = latitude
@@ -185,7 +188,7 @@ class ChangeMarketLocationViewController: GoldenPythagTableViewController, UITex
     }
     
     // this method allows keyboard removal by touching any background in the view
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         view.endEditing(true)
         setEditing(false, animated: true)
         super.touchesBegan(touches, withEvent: event)

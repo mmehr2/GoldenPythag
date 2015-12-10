@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum PredictionType : Int, Printable  {
+enum PredictionType : Int, CustomStringConvertible  {
     case A = 0, B, AB, NatalCheck
     var description : String {
         switch self {
@@ -28,7 +28,7 @@ enum PredictionType : Int, Printable  {
     }
 }
 
-enum PredictionState : Printable  {
+enum PredictionState : CustomStringConvertible  {
     case New, InProgress, Completed, Failed
     var description : String {
         switch self {

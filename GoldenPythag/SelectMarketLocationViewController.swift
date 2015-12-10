@@ -106,7 +106,7 @@ class SelectMarketLocationViewController: GoldenPythagTableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let identifier = indexPath.section == 0 ? "Default Market Location Cell" : "Custom Market Location Cell"
-        let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) 
         
         // Configure the cell...
         cell.textLabel?.text = model.marketLocations[indexForIndexPath(indexPath)].name

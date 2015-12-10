@@ -38,7 +38,7 @@ enum GPNotificationType {
 }
 
 // Simple Notification system (model "radio station")
-class GPNotification : Printable {
+class GPNotification : CustomStringConvertible {
     private var _type: GPNotificationType
     private var observer : AnyObject?
     private var debug : Bool {
@@ -88,7 +88,7 @@ class GPNotification : Printable {
     
     func broadcast() {
         if _type != .None {
-            if debug { println("Sent \(self)") }
+            if debug { print("Sent \(self)") }
             NSNotificationCenter.defaultCenter().postNotificationName(name,
                 object: nil)
         }
@@ -98,7 +98,7 @@ class GPNotification : Printable {
     // save the return value to pass to unlistenFor: later
     func listen(completion: (NSNotification!) -> Void) {
         if _type != .None {
-            if debug { println("Awaiting \(self)") }
+            if debug { print("Awaiting \(self)") }
             observer = NSNotificationCenter.defaultCenter().addObserverForName(name, object: nil, queue: NSOperationQueue.mainQueue(), usingBlock: completion)
         }
     }
@@ -107,7 +107,7 @@ class GPNotification : Printable {
     // pass the object returned from the above call to listenFor:completion:
     func unlisten() {
         if observer != nil {
-            if debug { println("Unawaiting \(self)") }
+            if debug { print("Unawaiting \(self)") }
             NSNotificationCenter.defaultCenter().removeObserver(observer!)
             observer = nil
         }

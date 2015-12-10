@@ -22,7 +22,7 @@ class SelectPivotViewController: GoldenPythagTableViewController, UINavigationCo
         set {
             if readOnly {
                 //pivotData! = newValue // should not happen, violates readOnly mode
-                println("Attempt to set pivotData violates readOnly mode of SPVC!")
+                print("Attempt to set pivotData violates readOnly mode of SPVC!")
             } else {
                 pivotList!.pivotList = newValue
             }
@@ -137,7 +137,7 @@ class SelectPivotViewController: GoldenPythagTableViewController, UINavigationCo
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cellIdentifier = readOnly ? "ReadOnly Pivot Cell" : "Pivot Cell"
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) 
 
         // Configure the cell...
         cell.textLabel?.text = describePivot(pivots[indexPath.row])
@@ -147,7 +147,7 @@ class SelectPivotViewController: GoldenPythagTableViewController, UINavigationCo
 
     func describePivot( pivot: PricePivot ) -> String {
         let topStr = pivot.top ? " Top " : " Bot "
-        var result = getFormattedStringFromPrice(pivot.price) + topStr + getFormattedStringFromDate(pivot.date)
+        let result = getFormattedStringFromPrice(pivot.price) + topStr + getFormattedStringFromDate(pivot.date)
         return result
     }
 
@@ -233,7 +233,7 @@ class SelectPivotViewController: GoldenPythagTableViewController, UINavigationCo
         givenPivot = earlierIndex >= 0 ? list.pivotList[earlierIndex] : nil
         nextPrice = givenPivot?.price ?? nextPrice
         
-        var pivot = PricePivot(date: nextDate, price: nextPrice, top: nextTop)
+        let pivot = PricePivot(date: nextDate, price: nextPrice, top: nextTop)
         return pivot
     }
     
@@ -252,7 +252,7 @@ class SelectPivotViewController: GoldenPythagTableViewController, UINavigationCo
         else if segue.identifier == "Add Pivot Segue" {
             if let dvc = segue.destinationViewController as? ChangePivotViewController {
                 // create a pivot
-                var pivot = suggestNewPivotForPivotList(pivotList!)
+                let pivot = suggestNewPivotForPivotList(pivotList!)
                 // pass the new pivot to the editor for changes
                 dvc.pivot = pivot // only allow this segue when we are RW
                 // set code to add it to our pivotList's data list if user presses Save

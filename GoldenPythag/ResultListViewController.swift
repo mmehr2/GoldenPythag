@@ -58,7 +58,7 @@ class ResultListViewController: GoldenPythagTableViewController {
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Result Cell", forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("Result Cell", forIndexPath: indexPath) 
 
         // Configure the cell...
         cell.textLabel?.text = "Result \(resultList[indexPath.row]) on \(getFormattedStringFromDate(dateList[indexPath.row]))"

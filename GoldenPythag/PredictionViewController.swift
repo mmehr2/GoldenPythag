@@ -86,7 +86,7 @@ class PredictionViewController: GoldenPythagTableViewController {
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Prediction Cell", forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("Prediction Cell", forIndexPath: indexPath) 
 
         // Configure the cell...
         cell.textLabel?.text = getStandardPredictionDescription(model.filteredPredictions[indexPath.row])
@@ -124,7 +124,7 @@ class PredictionViewController: GoldenPythagTableViewController {
             // if the last visible item was deleted, also clear the editing state of the VC
             if model.filteredPredictions.count == 0 {
                 setEditing(false, animated: true)
-                println("removed editing state (deleted last editable item)")
+                print("removed editing state (deleted last editable item)")
             }
         } else if editingStyle == .Insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view

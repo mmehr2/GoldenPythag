@@ -126,7 +126,7 @@ class SelectPivotListViewController: GoldenPythagTableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Pivot List Cell", forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("Pivot List Cell", forIndexPath: indexPath) 
 
         // Configure the cell...
         let pl = model.filteredPivotLists[indexPath.row]

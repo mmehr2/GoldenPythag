@@ -46,7 +46,7 @@ class DisplayPredictionViewController: UIViewController, BarGraphViewDataSource 
     }
     
     @IBAction func showResults(sender: UIBarButtonItem) {
-        println("Testing the Show Results Segue")
+        print("Testing the Show Results Segue")
     }
     
     override func viewDidLoad() {

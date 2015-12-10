@@ -72,7 +72,7 @@ class SelectMarketViewController: GoldenPythagTableViewController {
         if let vcs = navigationController?.viewControllers {
             if (vcs as NSArray).indexOfObject(self) == NSNotFound {
                 // NOTE: this will never happen as long as we are the top of the NC's stack (current design)
-                println("SMVC back button pressed!")
+                print("SMVC back button pressed!")
             }
         }
     }
@@ -80,7 +80,7 @@ class SelectMarketViewController: GoldenPythagTableViewController {
     // MARK: user interface
     @IBAction func selectMarket(sender: UIBarButtonItem) {
         // figure out which row is currently selected, if any
-        if let indexPath = tableView.indexPathForSelectedRow() {
+        if let indexPath = tableView.indexPathForSelectedRow {
             // set the model's currentMarket to the market at the selected row
             // NOTE: section 0 is all defaults, 1 is all custom markets, so we need a func
             //   to convert the indexPath to a combined row to index the markets table
@@ -125,7 +125,7 @@ class SelectMarketViewController: GoldenPythagTableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let identifier = indexPath.section == 0 ? "Default Market Cell" : "Custom Market Cell"
-        let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) 
 
         // Configure the cell...
         let market = model.markets[indexForIndexPath(indexPath)]

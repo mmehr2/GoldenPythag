@@ -17,7 +17,7 @@ which says to run this command line to eliminate some cache data:
 
 // MARK: random numbers
 // get random integer in between two numbers (+ve or -ve fine, from < to)
-func getRandomFrom(from: Int, #to: Int) -> Int {
+func getRandomFrom(from: Int, to: Int) -> Int {
     let arg : UInt32 = UInt32(to - from)
     return Int(arc4random_uniform(arg)) + from
 }
@@ -57,7 +57,7 @@ func <=(d1: NSDate, d2: NSDate) -> Bool {
 }
 
 // func for getting a random date
-func getRandomDateFrom(from: Int, #to: Int) -> NSDate {
+func getRandomDateFrom(from: Int, to: Int) -> NSDate {
     var date = NSDate()
     let numToAdd = getRandomFrom(from, to: to)
     date = date.addDays(numToAdd)
@@ -92,7 +92,7 @@ func linearScale( input: Double, fromRange: ClosedInterval<Double>, toRange: Clo
     let xNum = input - x0
     let xDenom = x1 - x0
     let yNum = y1 - y0
-    var result = y0 + (xNum / xDenom) * yNum
+    let result = y0 + (xNum / xDenom) * yNum
     return result
 }
 
