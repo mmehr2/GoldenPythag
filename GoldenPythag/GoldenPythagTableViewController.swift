@@ -110,7 +110,7 @@ class GoldenPythagTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // add the edit button to whatever single button the storyboard nav controller has
         navigationItem.rightBarButtonItems?.append(editButtonItem())
-        navigationItem.rightBarButtonItems = navigationItem.rightBarButtonItems?.reverse().flatMap({ $0 }) // the 1st item is leftward of the 2nd
+    //    navigationItem.rightBarButtonItems = navigationItem.rightBarButtonItems?.reverse().flatMap({ $0 }) // the 1st item is leftward of the 2nd
         
         // need to set the title
         navigationItem.title = title
