@@ -18,18 +18,20 @@ The list class adds a Name and Notes to a PricePivot array, and associates the l
 The GetDefaults() static/class functions are designed to create random test data for use before I fully implement CoreData persistence for the objects.
 */
 
-enum PricePivotType : Printable  {
-    case Bottom, Top
-    var description : String {
-        switch self {
-        case Bottom: return "B"
-        case Top: return "T"
-        }
-    }
-}
+// MARK: basic pivot data types
+//enum PricePivotType : Int, Printable  {
+//    case Bottom = 0, Top
+//    var description : String {
+//        switch self {
+//        case Bottom: return "B"
+//        case Top: return "T"
+//        }
+//    }
+//}
 
 typealias Price = NSNumber
 
+// pivot struct pairs a price with a date, also indicating top or bottom price inflection
 struct PricePivot : Printable {
     var date : NSDate
     var price : Price
@@ -87,42 +89,71 @@ struct PricePivot : Printable {
     }
 }
 
-// MARK: list class
+// MARK: list class entity
+// identified list of pivots associated with a particular market
 class PricePivotList : Printable {
-    var name : String?
-    var notes : String?
-    var marketId : Int?
-    var pivotList : [PricePivot] = []
+    let id : Int
+    var marketId : Int
+    var name : String? { didSet { notification.broadcast() } }
+    var notes : String? { didSet { notification.broadcast() } }
+    var pivotList : [PricePivot] = [] { didSet { notification2.broadcast() } }
     
-    init(market: Market) {
+    init(ID: Int, market: Market) {
+        id = ID
         marketId = market.id
     }
     
-    init(marketID : Int, pivots: [PricePivot])
+    init(ID: Int, marketID : Int)
     {
+        id = ID
         marketId = marketID
-        pivotList = pivots
     }
     
+    // MARK: change notification feature
+    var notifying : Bool = false
+    private var notification : GPNotification {
+        return GPNotification(type: notifying ? .PivotList : .None)
+    }
+    private var notification2 : GPNotification {
+        return GPNotification(type: notifying ? .PivotList : .None)
+    }
+    
+    // MARK: custom ID generator
+    // Swift 1.2 would use a static/class variable instead of nested struct
+    private struct Static {
+        static var idCounter = 1000
+    }
+    class func assignID() -> Int {
+        return Static.idCounter++ // commit to using the next ID
+    }
+    class func getNextID() -> Int {
+        return Static.idCounter // get what the next ID would be
+    }
+
+    // MARK: standardized description/name
+    // description is pivot count with optional date range
     func minMaxDate() -> (NSDate, NSDate)? {
         if pivotList.count == 0 { return nil }
         let pls = pivotList.sorted({ $0.date < $1.date })
         return (pls.first!.date, pls.last!.date)
     }
-    var defaultDescription : String {
+    var description : String {
         if let (minDate, maxDate) = minMaxDate() {
             return "\(pivotList.count) prices from \(minDate) to \(maxDate)"
         } else {
             return "0 prices"
         }
     }
-    var description : String {
-        return name ?? defaultDescription
-    }
     
+    // standard name if user hasn't entered one (uses name if present)
+    var standardName : String {
+        return name ?? "List \(id)"
+    }
+
+    // MARK: simulated data generation
     class func GetRandomItem() -> PricePivotList {
         // create and return an unnamed array of random data to play with
-        var pdata = PricePivotList(market: Market.GetRandomItem())
+        var pdata = PricePivotList(ID: assignID(), market: Market.GetRandomItem())
         pdata.pivotList = PricePivot.GetDefaults()
         return pdata
     }

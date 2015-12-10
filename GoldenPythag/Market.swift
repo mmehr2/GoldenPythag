@@ -36,7 +36,7 @@ class Market {
     
     // NOTE: in Swift 1.2 this can be a variable/property
     private struct Static {
-       static let lastDefaultID = 10050 // room for expansion
+       static let lastDefaultID = 10050 // room for expansion of base ID list
     }
     private class func GetData() -> [Int:String] {
         return [
@@ -88,18 +88,28 @@ class CustomMarket : Market {
         }
         set {
             customName = newValue
+            notification.broadcast()
         }
     }
-    var origin : NSDate
-    var location : MarketLocation
+    var origin : NSDate { didSet { notification.broadcast() } }
+    var location : MarketLocation { didSet { notification.broadcast() } }
     
-    // custom ID generator
+    // MARK: change notification feature
+    var notifying : Bool = false
+    private var notification : GPNotification {
+        return GPNotification(type: notifying ? .Market : .None)
+    }
+    
+    // MARK: custom ID generator
     // Swift 1.2 would use a static/class variable instead of nested struct
     private struct Static {
         static var idCounter = Market.Static.lastDefaultID
     }
-    class func assignCustomID() -> Int {
-        return Static.idCounter++
+    class func assignID() -> Int {
+        return Static.idCounter++ // commit to using the next ID
+    }
+    class func getNextID() -> Int {
+        return Static.idCounter // get what the next ID would be
     }
     
     init(name namex: String, withID idx: Int, andOrigin originx:NSDate, isAt loc:MarketLocation)
@@ -110,9 +120,11 @@ class CustomMarket : Market {
         super.init(ID: idx)
     }
     
-    // this cannot be allowed, because (A) we need more info, and (B) base class won't work
+    // simple init to allow editor to fill in the rest of the info
     override init(ID idx: Int) {
-        fatalError("init(ID:) can not be implemented")
+        origin = NSDate()
+        location = MarketLocation.GetDefaults()[0]
+        super.init(ID: idx)
     }
     
 }

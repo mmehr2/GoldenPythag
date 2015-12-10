@@ -39,6 +39,7 @@ class ResultListViewController: GoldenPythagTableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        hidesBottomBarWhenPushed = false
     }
 
     // MARK: - Table view data source
@@ -57,10 +58,10 @@ class ResultListViewController: GoldenPythagTableViewController {
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Result Cell", forIndexPath: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("Result Cell", forIndexPath: indexPath) as! UITableViewCell
 
         // Configure the cell...
-        cell.textLabel?.text = "Result \(resultList[indexPath.row]) at \(dateList[indexPath.row])"
+        cell.textLabel?.text = "Result \(resultList[indexPath.row]) on \(getFormattedStringFromDate(dateList[indexPath.row]))"
 
         return cell
     }

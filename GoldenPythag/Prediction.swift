@@ -8,8 +8,8 @@
 
 import Foundation
 
-enum PredictionType : Printable  {
-    case A, B, AB, NatalCheck
+enum PredictionType : Int, Printable  {
+    case A = 0, B, AB, NatalCheck
     var description : String {
         switch self {
         case A: return "A"
@@ -40,29 +40,52 @@ enum PredictionState : Printable  {
     }
 }
 
-class Prediction : Printable {
+class Prediction {
+    let id : Int
+    var marketId : Int?
     // basic data encapsulates the parameters of a prediction request
     var startDate : NSDate = NSDate()
     var lengthInDays : Int = 1
     var type : PredictionType = .A
-    let marketId : Int
     var pivotData : [PricePivot] = []
     // data that comes back during or after a prediction run
-    var state : PredictionState = .New
+    var state : PredictionState = .New { didSet { notification.broadcast() } }
     var message : String?
     var resultList : [Int] = []
     var runLength : NSTimeInterval = 0.0
     var runDate : NSDate?
+    var endDate : NSDate { // computed, read-only property
+        return startDate.addDays(lengthInDays)
+    }
     
-    init( typeInput: PredictionType,
+    // custom ID generator
+    // Swift 1.2 would use a static/class variable instead of nested struct
+    private struct Static {
+        static var idCounter = 30000
+    }
+    class func assignID() -> Int {
+        return Static.idCounter++ // commit to using the next ID
+    }
+    class func getNextID() -> Int {
+        return Static.idCounter // get what the next ID would be
+    }
+
+    // simple init to allow editor to fill in rest of required parameters
+    init(ID idx: Int) {
+        id = idx
+    }
+    
+    init(ID idx: Int,
+        typeInput: PredictionType,
         onDate start: NSDate,
         forDays length: Int,
         withPrices pivotListInput: PricePivotList )
     {
+        id = idx
         type = typeInput
         startDate = start
         lengthInDays = length
-        marketId = pivotListInput.marketId! // must be associated by the time this is called
+        marketId = pivotListInput.marketId
         pivotData = pivotListInput.pivotList
     }
     
@@ -82,10 +105,16 @@ class Prediction : Printable {
         }
     }
     
-    var description : String {
-        let market = Market.GetDefaultName(marketId)!
-        return "Type \(type) run of \(market) market for \(lengthInDays) days from \(startDate) (\(state) with \(pivotData.count) prices and \(resultList.count) results)"
+    // MARK: change notification feature
+    var notifying : Bool = false
+    private var notification : GPNotification {
+        return GPNotification(type: notifying ? .Prediction : .None)
     }
+    
+//    var description : String {
+//        let market = marketId != nil ? Market.GetDefaultName(marketId!)! : "None"
+//        return "Type \(type) run of \(market) market for \(lengthInDays) days from \(startDate) (\(state) with \(pivotData.count) prices and \(resultList.count) results)"
+//    }
     
     class func GetDefaults() -> [Prediction] {
         // create and return an array of random data to play with
@@ -93,7 +122,7 @@ class Prediction : Printable {
         let loops = getRandomFrom(4, to: 8)
         for _ in 0..<loops {
             let length = getRandomFrom(5, to: 30)
-            let object = Prediction(typeInput: .GetRandomItem(), onDate: getRandomDate(), forDays: length, withPrices: PricePivotList.GetRandomItem())
+            let object = Prediction(ID: assignID(), typeInput: .GetRandomItem(), onDate: getRandomDate(), forDays: length, withPrices: PricePivotList.GetRandomItem())
             object.setRandomResults(getRandomDate())
             pdata.append(object)
         }

@@ -80,11 +80,30 @@ class CustomMarketLocation : MarketLocation {
         }
         set {
             customName = newValue
+            notification.broadcast()
         }
     }
-    var latitude : Double = 0.0
-    var longitude : Double = 0.0
-    var timezone : Double = 0.0
+    var latitude : Double = 0.0 { didSet { notification.broadcast() } }
+    var longitude : Double = 0.0 { didSet { notification.broadcast() } }
+    var timezone : Double = 0.0 { didSet { notification.broadcast() } }
+    
+    // model broadcast notification feature
+    var notifying : Bool = false
+    private var notification : GPNotification {
+        return GPNotification(type: notifying ? .MarketLocation : .None)
+    }
+    
+    // custom ID generator
+    // Swift 1.2 would use a static/class variable instead of nested struct
+    private struct Static {
+        static var idCounter = MarketLocation.Static.lastDefaultID
+    }
+    class func assignID() -> Int {
+        return Static.idCounter++ // commit to using the next ID
+    }
+    class func getNextID() -> Int {
+        return Static.idCounter // get what the next ID would be
+    }
     
     init(name namex: String, withID idx: Int, andTimeZone tzonex:Double, isAtLatitude locLat:Double, andLongitude locLon: Double)
     {
@@ -95,8 +114,8 @@ class CustomMarketLocation : MarketLocation {
         super.init(ID: idx)
     }
     
-    // this cannot be allowed, because (A) we need more info, and (B) base class won't work
+    // simple init to allow editor to fill in the rest of the info
     override init(ID idx: Int) {
-        fatalError("init(ID:) can not be implemented")
+        super.init(ID: idx)
     }
 }
