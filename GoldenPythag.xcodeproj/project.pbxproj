@@ -15,6 +15,7 @@
 		A6AB4F441AB436EA0035859D /* ChangePivotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6AB4F431AB436EA0035859D /* ChangePivotViewController.swift */; };
 		A6AB4F461AB4374A0035859D /* ChangePivotListInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6AB4F451AB4374A0035859D /* ChangePivotListInfoViewController.swift */; };
 		A6AB4F481AB438580035859D /* AddPivotsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6AB4F471AB438580035859D /* AddPivotsViewController.swift */; };
+		A6B34CFB1C66D2DA001296F3 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = A6B34CFA1C66D2DA001296F3 /* README.md */; };
 		A6E967061AA44D3300C2F7BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E967051AA44D3300C2F7BE /* AppDelegate.swift */; };
 		A6E967091AA44D3300C2F7BE /* GoldenPythag.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A6E967071AA44D3300C2F7BE /* GoldenPythag.xcdatamodeld */; };
 		A6E9670E1AA44D3300C2F7BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6E9670C1AA44D3300C2F7BE /* Main.storyboard */; };
@@ -56,6 +57,7 @@
 		A6AB4F431AB436EA0035859D /* ChangePivotViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePivotViewController.swift; sourceTree = "<group>"; };
 		A6AB4F451AB4374A0035859D /* ChangePivotListInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePivotListInfoViewController.swift; sourceTree = "<group>"; };
 		A6AB4F471AB438580035859D /* AddPivotsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPivotsViewController.swift; sourceTree = "<group>"; };
+		A6B34CFA1C66D2DA001296F3 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = GoldenPythag/README.md; sourceTree = "<group>"; };
 		A6E967001AA44D3300C2F7BE /* GoldenPythag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoldenPythag.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6E967041AA44D3300C2F7BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A6E967051AA44D3300C2F7BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 		A6E966F71AA44D3300C2F7BE = {
 			isa = PBXGroup;
 			children = (
+				A6B34CFA1C66D2DA001296F3 /* README.md */,
 				A6E967021AA44D3300C2F7BE /* GoldenPythag */,
 				A6E9671B1AA44D3300C2F7BE /* GoldenPythagTests */,
 				A6E967011AA44D3300C2F7BE /* Products */,
@@ -308,6 +311,7 @@
 				A6E967061AA44D3300C2F7BE /* AppDelegate.swift in Sources */,
 				A6E967301AA46AA400C2F7BE /* PricePivot.swift in Sources */,
 				A6A9A5C21AAA055200E4B084 /* SelectMarketViewController.swift in Sources */,
+				A6B34CFB1C66D2DA001296F3 /* README.md in Sources */,
 				A6E967441AA850E900C2F7BE /* DisplayPredictionViewController.swift in Sources */,
 				A6E967091AA44D3300C2F7BE /* GoldenPythag.xcdatamodeld in Sources */,
 				A6EEFD751AAE1F0300788D8F /* GPNotification.swift in Sources */,
